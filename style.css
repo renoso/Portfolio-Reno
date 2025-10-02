@@ -1,0 +1,249 @@
+/* Importar Google Fonts, se desejar */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap');
+
+/* Estilos Globais */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa; /* Cor de fundo neutra e leve: um cinza muito claro (quase branco) */
+    color: #343a40; /* Cor do texto principal: um cinza escuro para contraste */
+}
+
+/* Estilo para o cabeçalho com a imagem de fundo */
+/* Aqui vamos usar a imagem tecnológica, mas com um overlay para suavizar */
+header.bg-light {
+    background-image: url('imagens/103709070515.jpg'); /* Sua imagem tecnológica */
+    background-size: cover;
+    background-position: center;
+     background-attachment: fixed; /* Efeito parallax simples */
+    color: #ffffff; /* Texto claro sobre o fundo escuro do cabeçalho */
+    padding-top: 6rem; /* Mais espaçamento para o conteúdo do cabeçalho */
+    padding-bottom: 6rem;
+    position: relative; /* Para o overlay */
+    overflow: hidden; /* Garante que o pseudo-elemento não vaze */
+}
+
+header.bg-light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay semi-transparente preto para escurecer a imagem */
+    z-index: 1; /* Garante que o overlay fique abaixo do conteúdo do header */
+}
+
+header.bg-light .container {
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo do header fique acima do overlay */
+}
+
+/* Estilo para a imagem de perfil */
+.profile-img {
+    width: 180px; /* Tamanho da foto de perfil */
+    height: 180px;
+    border-radius: 50%; /* Torna a imagem redonda */
+    object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
+    border: 5px solid rgba(255, 255, 255, 0.8); /* Borda branca suave */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Ajustes para o h1 e p no header */
+header.bg-light h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    color: #ffffff; /* Texto branco no header */
+}
+
+/* CLASSE CUSTOMIZADA PARA EFEITO GLOW E 3D COMBINADOS */
+.text-glow {
+    /* Efeito 3D/Relevo (camadas de sombras curtas e escuras) */
+    text-shadow: 
+        1px 1px 0 #000,   /* Sombra escura para o efeito 3D (para texto claro) */
+        2px 2px 0 #000,   /* Segunda camada do 3D */
+        3px 3px 0 #000,   /* Terceira camada do 3D */
+        
+        /* Efeito Glow (sombras difusas e claras) */
+        0 0 10px rgba(255, 255, 255, 0.8), /* Branco suave para o brilho interno */
+        0 0 20px rgba(0, 123, 255, 0.6),  /* Brilho azul externo */
+        0 0 30px rgba(0, 123, 255, 0.4);  /* Brilho azul mais distante e suave */
+    
+    /* Garante que a cor do texto seja branca para o efeito funcionar bem */
+    color: #fff; 
+}
+
+header.bg-light p.lead {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #e0e0e0; /* Texto cinza claro no header */
+}
+
+/* Estilos para a seção principal */
+main.container {
+    background-color: #025159; /* Fundo branco para o conteúdo principal */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08); /* Sombra mais visível para destacar a caixa de conteúdo */
+    padding: 3rem;
+    margin-top: -5rem; /* Puxa a main para cima do header */
+    position: relative;
+    z-index: 10; /* Garante que a main fique acima do header */
+}
+
+main h2, main h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #e9f4ff; /* Cores de título mais escuras para contraste */
+}
+
+main p {
+    line-height: 1.7;
+    color: #eef7ff; /* Cor de parágrafo um pouco mais escura que o body */
+}
+
+/* Borda para as seções */
+.border-bottom {
+    border-color: #dee2e6 !important; /* Cor da borda mais suave */
+}
+
+/* Estilos para os badges de habilidades */
+.badge {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 0.6em 1em; /* Ajuste de padding */
+    border-radius: 0.35rem; /* Bordas levemente arredondadas */
+    /* Cores dos badges ajustadas para um tom mais suave se necessário,
+       mas mantendo as cores Bootstrap originais podem ser um bom contraste */
+}
+
+/* Ajustes para as cores dos badges */
+.badge.bg-secondary { background-color: #fffc48 !important; color: #343a40 !important; }
+.badge.bg-success { background-color: #28a745 !important; }
+.badge.bg-warning { background-color: #4c25f8 !important; color: #f0f6fc !important; } /* A cor do texto para warning é escura */
+.badge bg-light { background-color: #fbff25 !important; color: #343a40 !important; } /* A cor do texto para warning é escura */
+.badge.bg-danger { background-color: #28a745 !important; }
+
+/* Estilo para os links sociais */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1.5rem;
+    color: #eef4fa; /* Azul primário do Bootstrap */
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #2b8df5; /* Azul mais escuro no hover */
+    text-decoration: none;
+}
+
+/* Responsividade (exemplo) */
+@media (max-width: 768px) {
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    header.bg-light {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    main.container {
+        padding: 2rem;
+        margin-top: -3rem;
+    }
+
+    .social-link {
+        margin-right: 1rem;
+        margin-bottom: 0.5rem; /* Espaçamento em telas menores */
+    }
+
+    .d-flex.flex-wrap.gap-2 {
+        justify-content: center; /* Centraliza badges em telas pequenas */
+    }
+}
+
+/* No seu arquivo style.css */
+
+/* Define a animação de pulso */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(108, 117, 125, 0.7); /* Cor secundária do Bootstrap */
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(108, 117, 125, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(108, 117, 125, 0);
+    }
+}
+
+/* Aplica a animação quando a classe 'pulse-effect' estiver presente */
+.pulse-effect {
+    animation: pulse 1s infinite;
+}
+
+/* Opcional: Melhore o visual da imagem de perfil */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Torna a imagem redonda */
+    transition: transform 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Adicione um pequeno efeito de escala ao passar o mouse */
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   ESTILOS PARA ÍCONES SOCIAIS
+   ========================================= */
+
+/* Estilo Base para todos os Links Sociais */
+.social-link {
+    /* Define uma cor padrão para os ícones */
+    color: #495057; 
+    
+    /* Remove o sublinhado */
+    text-decoration: none; 
+    
+    /* Garante que a transição seja suave */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    
+    /* Necessário para o efeito de 'subida' */
+    display: inline-block; 
+}
+
+/* Efeito de Hover (Passar o Mouse) */
+.social-link:hover {
+    /* Mude a cor para dar feedback ao usuário */
+    color: #007bff; 
+    
+    /* Pequeno movimento para cima para destacar a interação */
+    transform: translateY(-3px); 
+}
+
+/* Estilos Opcionais: Cores Oficiais das Marcas */
+.fa-linkedin:hover {
+    color: #0077B5; /* Azul do LinkedIn */
+}
+
+.fa-github:hover, .fa-github-square:hover {
+    color: #181717; /* Preto/Cinza do GitHub */
+}
+
+.fa-instagram-square:hover {
+    color: #E1306C; /* Rosa Instagram */
+}
+
+.fa-envelope-square:hover {
+    color: #D44638; /* Vermelho padrão do Gmail/Google */
+}
+
