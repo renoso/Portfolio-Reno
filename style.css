@@ -81,7 +81,7 @@ header.bg-light p.lead {
 
 /* Estilos para a seção principal */
 main.container {
-    background-color: #025159; /* Fundo branco para o conteúdo principal */
+    background-color: #32005f; /* Fundo branco para o conteúdo principal */
     border-radius: 8px; /* Cantos arredondados */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.08); /* Sombra mais visível para destacar a caixa de conteúdo */
     padding: 3rem;
@@ -209,7 +209,7 @@ main p {
 /* Estilo Base para todos os Links Sociais */
 .social-link {
     /* Define uma cor padrão para os ícones */
-    color: #495057; 
+    color: #c9d0f7; 
     
     /* Remove o sublinhado */
     text-decoration: none; 
@@ -239,11 +239,11 @@ main p {
     color: #181717; /* Preto/Cinza do GitHub */
 }
 
-.fa-instagram-square:hover {
-    color: #E1306C; /* Rosa Instagram */
+.fa-instagram:hover {
+    color: #ec2769; /* Rosa Instagram */
 }
 
 .fa-envelope-square:hover {
-    color: #D44638; /* Vermelho padrão do Gmail/Google */
+    color: #e74233; /* Vermelho padrão do Gmail/Google */
 }
 
