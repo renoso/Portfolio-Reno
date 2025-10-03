@@ -42,3 +42,23 @@ if (githubLink) {
         });
     });
 }
+
+const Emaillink = document.querySelector('a[title="Email/Gmail"]');
+
+if (Emaillink) {
+    Emaillink.addEventListener('click', (e) => {
+        // Impede o comportamento padrão de navegação (para que não saia da página)
+        e.preventDefault(); 
+        
+        const urlToCopy = Emaillink.href;
+        
+        // Usa a API Clipboard para copiar o URL
+        navigator.clipboard.writeText(urlToCopy).then(() => {
+            alert('🔗 URL do Email copiado para a área de transferência!');
+        }).catch(err => {
+            // Caso a cópia falhe (ex: navegador antigo)
+            console.error('Falha ao copiar:', err);
+            alert('❌ Não foi possível copiar automaticamente. O link é: ' + urlToCopy);
+        });
+    });
+}
