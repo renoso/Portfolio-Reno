@@ -11,7 +11,7 @@ body {
 /* Estilo para o cabeçalho com a imagem de fundo */
 /* Aqui vamos usar a imagem tecnológica, mas com um overlay para suavizar */
 header.bg-light {
-    background-image: url('imagens/103709070515.jpg'); /* Sua imagem tecnológica */
+    background-image: url('imagens/matrix.png'); /* Sua imagem tecnológica */
     background-size: cover;
     background-position: center;
      background-attachment: fixed; /* Efeito parallax simples */
